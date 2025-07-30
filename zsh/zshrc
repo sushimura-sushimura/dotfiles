@@ -1,0 +1,59 @@
+# =========================================================
+# Zsh Configuration File
+# This file is managed by your dotfiles repository.
+# =========================================================
+
+# --- Starship Prompt ---
+# Starshipプロンプトを初期化します。
+eval "$(starship init zsh)"
+
+# --- Aliases ---
+# よく使うコマンドに短いエイリアス（別名）を設定します。
+
+# Git aliases
+# Git操作を簡潔にするためのエイリアスです。
+alias st='git status'               # git status
+alias co='git checkout'             # git checkout
+alias br='git branch'               # git branch
+alias ci='git commit'               # git commit
+alias df='git diff'                 # git diff
+alias lg='git log --oneline --decorate --all --graph' # git logの視覚的に分かりやすい表示
+
+# ls aliases (using eza)
+# ezaコマンドを使ったファイル表示エイリアスです。
+alias ls='eza --icons --git'        # ファイルの種類に応じたアイコンとGitステータスを表示
+alias ll='eza -alF --icons --git'   # 隠しファイル、詳細情報、ファイル種別アイコン、Gitステータスを表示
+alias la='eza -A --icons --git'     # .と..を除くすべてのファイル、アイコン、Gitステータスを表示
+
+# safe-rm (オプション: 誤削除防止ツール)
+# rmコマンドをsafe-rmに置き換えることで、重要なファイルの誤削除を防ぎます。
+# safe-rmがインストールされていることを確認してください。
+# alias rm='safe-rm'
+
+# --- direnv Setup ---
+# direnvを初期化します。
+# プロジェクトディレクトリごとに環境変数を自動で切り替えるためのツールです。
+# direnvがインストールされていることを確認してください。
+eval "$(direnv hook zsh)"
+
+# --- PATH Configuration (例: 必要に応じて追加・調整) ---
+# コマンドがどこにあるかZshに教えるためのパス設定です。
+# 通常は.zshenvで設定することが多いですが、ここでも設定可能です。
+# export PATH="$HOME/bin:/usr/local/bin:$PATH"
+
+# --- Zsh Completions (補完機能の有効化) ---
+# Zshの強力な補完機能を有効にするための設定です。
+# autoload -Uz compinit
+# compinit
+
+# --- Nix Setup ---
+# Nix環境を初期化します。
+# 通常は.zshenvに置かれますが、もしNixコマンドが動かない場合はここに記述します。
+# if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+#   . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+# fi
+
+# --- Custom Settings ---
+# ここから下に、あなた独自のZsh設定を自由に追加してください。
+# 例: fzf, zoxide, fast-syntax-highlighting などの設定。
+# 特定のツールの設定ファイルへのソース（source）コマンドなどもここに追加します。
