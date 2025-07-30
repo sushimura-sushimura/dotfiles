@@ -55,5 +55,10 @@ eval "$(direnv hook zsh)"
 
 # --- Custom Settings ---
 # ここから下に、あなた独自のZsh設定を自由に追加してください。
+
+# --- Source Aliases ---
+# Load custom aliases from aliases.zsh
+source "${ZDOTDIR:-$HOME}/my_programs/dotfiles/zsh/aliases.zsh"
+
 # 例: fzf, zoxide, fast-syntax-highlighting などの設定。
 # 特定のツールの設定ファイルへのソース（source）コマンドなどもここに追加します。
