@@ -1,0 +1,13 @@
+# macOS Specific
+.DS_Store
+
+# VS Code Specific (if you don't want to track user-specific settings)
+.vscode/settings.json.bak
+.vscode/.history/
+
+# Nix Specific
+.direnv/
+.envrc
+
+# Logs
+*.log
